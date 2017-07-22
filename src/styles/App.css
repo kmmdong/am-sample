@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: blue;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 76px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90%;
+  padding: 0 5%;
+  background: white;
+
+}
+
+.hdWrap {
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.logo a {
+  display: block;
+  font-size: 1em;
+}
+
+.logo a img {
+  font-size: 1em;
+  max-height: 33px;
+  vertical-align: middle;
+}
+
+.logo {
+  margin: 0;
+  float: left;
+}
+
+.nav {
+  float: right;
+}
+
+.nav > ul {
+  float: left;
+}
+.nav ul {
+  list-style: none;
+}
+
+.nav > ul > li {
+  float: left;
+  margin: 0 10px;
+  font-size: 15px;
+  font-family: 'Futura-Med';
+}
+.nav ul li .arrow {
+  width: 7px;
+  margin-left: 3px;
+}
+
+.nav > ul > li > a {
+  padding: 8px 0 5px;
+  display: inline-block;
+  color: #000;
+}
+
+.nav ul .inqu a {
+  font-size: 12px;
+  line-height: 36px;
+  font-family: 'YoonGothicPro', sans-serif;
+  background: #000;
+  color: #ffbea2;
+  padding: 0 13px 0 10px;
+} 
+
+.nav ul .inqu img {
+  width: 10px;
+  margin-right: 13px;
+  margin-top: -3px;
+  vertical-align: middle;
+}
+
+.subList {
+  top: 76px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #cacaca;
+  padding: 20px 0 15px;
+  background: #eee;
+  box-shadow: inset 0 3px 5px rgba(55,55,55,0.2);
+  text-align: center;
+}
+
+.subList ul {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.subList ul li:first-child {
+  border-left: 1px solid #dadada;
+}
+
+.subList ul li {
+  float: left;
+  padding: 0 40px;
+  border-right: 1px solid #dadada;
+  text-align: center;
+}
+
+.subList ul li a {
+  color: rgb(0, 0, 0);
+  border-bottom: none;
+  display: block;
+  font-size: 16px;
+  font-family: 'Futura-Boo', 'YoonGothicPro', sans-serif;
+}
+
+.subList ul li a img {
+  vertical-align: middle;
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.subList .port li a {
+  font-size: 13px;
+}
+
+.subList .port li a img {
+  width: 18px;
+}
