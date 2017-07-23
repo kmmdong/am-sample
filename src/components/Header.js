@@ -6,16 +6,35 @@ export default class Header extends React.Component {
     super (props)
 
     this.state = {
-      selectedMenu : '',
-      showSub : false
+      showAbout : false,
+      showPort : false
     }
   }
 
-  selectedMenu (title) {
-    this.setState ({
-      selectedMenu : title,
-      showSub : !this.state.showSub
-    })
+  selectedAbout (e) {
+    e.preventDefault()
+    if (this.state.showPort) {
+      this.setState({
+        showPort : false
+      })
+    } else {
+      this.setState({
+        showAbout : !this.state.showAbout
+      })
+    }
+  }
+
+  selectedPort (e) {
+    e.preventDefault()
+    if (this.state.showAbout) {
+      this.setState({
+        showAbout : false
+      })
+    } else {
+      this.setState({
+        showPort : !this.state.showPort
+      })
+    }
   }
 
   render () {
@@ -30,9 +49,9 @@ export default class Header extends React.Component {
           <nav className={style.nav}>
             <ul className={style.navList}>
               <li>
-                <a href="">About</a>
+                <a onClick={this.selectedAbout.bind(this)} href="">About</a>
                 <img className={style.arrow} src="src/img/arrow_up.png" alt=""/>
-                { this.state.showSub &&
+                { this.state.showAbout &&
                   <div className={style.subList}>
                   <ul>
                     <li><a><img src="src/img/weare.png" alt=""/><br/>we are</a></li>
@@ -44,9 +63,9 @@ export default class Header extends React.Component {
                 }
               </li>
               <li>
-                <a href="">Portfolio</a>
+                <a onClick={this.selectedPort.bind(this)} href="">Portfolio</a>
                 <img className={style.arrow} src="src/img/arrow_up.png" alt=""/>
-                 { !this.state.showSub &&
+                 { this.state.showPort &&
                   <div className={style.subList}>
                     <ul className={style.port}>
                       <li><a><img src="src/img/all.png" alt=""/><br/>평형대별</a></li>
