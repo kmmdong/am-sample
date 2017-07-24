@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  vertical-align: middle;
+}
+
 .header {
   z-index: 1000;
   position: fixed;
@@ -153,6 +157,10 @@ a {
   width: 18px;
 }
 
+.mSubMenu {
+  display: none;
+}
+
 @media screen and (max-width: 860px) {
   .nav > ul > li {
     margin: 0 8px;
@@ -209,4 +217,202 @@ a {
   .logo a img {
     max-height: 35px;
   }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    display: none;
+  }
+  .mHeader {
+    display: block;
+  }
+  .mSubMenu {
+    display: block;
+  }
+}
+
+.mHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    background: #fff;
+    box-shadow: 0 3px 5px rgba(55,55,55,0.2);
+    padding: 15px 5% 18px;
+}
+
+.mHeader .mHdWrap {
+  overflow: hidden;
+}
+
+.mHeader .mHdWrap .logo {
+  float: left;
+}
+
+.mHeader .mHdWrap .logo img {
+  max-height: 33px;
+  vertical-align: middle;
+}
+
+.mHeader .mHdWrap .mHdBtn {
+  display:block;
+  float: right;
+  margin-top: 6px;
+  vertical-align: middle;
+}
+
+.mHeader .mSubMenu {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.mHeader .mSubMenu .mInquBtn {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  background: #000;
+  color: #ffc2a8;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'YoonGothicPro', sans-serif;
+}
+
+.mHeader .mSubMenu .mInquBtn img {
+  width: 12px;
+  margin-right: 20px;
+}
+
+.mHeader .mSubMenu h3 {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #b4b4b4;
+  text-align: center;
+  font-family: 'Futura-Med';
+  font-size: 1em;
+}
+
+.mHeader .mSubMenu h3 a {
+  display: block;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 60px;
+  height: 60px;
+}
+
+.mHeader .mSubMenu h3 img {
+  position: absolute;
+  top: 30px;
+  right: 10%;
+}
+.clicked{
+  color: rgb(255, 159, 119);
+  
+}
+
+.mHeader .mSubMenu .mSubList {
+  overflow: hidden;
+  border-bottom: 1px solid #c6c6c6;
+  padding: 20px;
+  background: #eee;
+}
+
+.mHeader .mSubMenu .mSubList li {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  list-style: none; 
+}
+
+.mHeader .mSubMenu .mSubList img {
+  width: 22px;
+  margin-bottom: 5px;
+}
+
+.mHeader .mSubMenu .mSubList .br {
+  border-right: none;
+}
+
+.mHeader .mSubMenu .mSubList .bt {
+  border-bottom: none;
+}
+
+.mHeader .mSubMenu .mSubList .brBt {
+  border-bottom: none;
+  border-right: none;
+}
+
+.mHeader .mSubMenu .mSubList a {
+  display : block;
+  padding: 15px 0 8px;
+  border-bottom: 1px solid #c6c6c6;
+  font-family: 'Futura-Boo', 'YoonGothicPro', 'sans-serif';
+  border-right: 1px solid #c6c6c6;
+}
+
+.mHeader .mSubMenu .port img {
+  width: 22px;
+  margin-bottom: 5px;
+}
+
+.mHeader .mSubMenu .port a {
+  font-size: 13px;
+  font-family: 'YoonGothicPro', 'sans-serif';
+}
+
+.mHeader .mSubMenu .board {
+  width: 100%;
+  background: #eeeeee;
+  padding: 20px 0;
+  border-bottom: 1px solid #b4b4b4;
+  font-size: 18px;
+  font-family: 'Futura-Med', 'YoonGothicPro', 'sans-serif';
+}
+
+.mHeader .mSubMenu .board a {
+  display: inline-block;
+  width: 50%;
+  border-right: 1px solid #b4b4b4;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.mHeader .mSubMenu .board a:last-child {
+  border-right: none;
+}
+
+.mHeader .mSubMenu .sns  {
+  width: 100%;
+  background: #eeeeee;
+  padding: 20px 0;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.mHeader .mSubMenu .sns a {
+  display: inline-block;
+  width: 33.3%;
+  border-right: 1px solid #b4b4b4;
+  height: 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.mHeader .mSubMenu .sns img {
+  width: 20px;
+  vertical-align: middle;
+}
+
+.mHeader .mSubMenu .sns a:last-child {
+  border-right: none;
+}
+
+.mHeader .mSubMenu  {
+  color: rgb(255, 159, 119);
+  border-bottom: 1px solid rgb(255, 159, 119);
 }

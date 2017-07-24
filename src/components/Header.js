@@ -7,11 +7,12 @@ export default class Header extends React.Component {
 
     this.state = {
       showAbout : false,
-      showPort : false,
+      showPort : false
     }
   }
 
   selectedAbout (e) {
+    this.props.selectSub()
     e.preventDefault()
     if (this.state.showPort) {
       this.setState({
@@ -49,7 +50,7 @@ export default class Header extends React.Component {
           <nav className={style.nav}>
             <ul className={style.navList}>
               <li onClick={this.selectedAbout.bind(this)}>
-                <a className={this.state.showAbout ? style.clickedNav : ''} href="">About</a>
+                <a className={this.state.showAbout && style.clickedNav} href="">About</a>
                 <img className={style.arrow} src={this.state.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
                 { this.state.showAbout &&
                   <div className={style.subList}>
@@ -63,7 +64,7 @@ export default class Header extends React.Component {
                 }
               </li>
               <li onClick={this.selectedPort.bind(this)}>
-                <a className={this.state.showPort ? style.clickedNav : ''}href="">Portfolio</a>
+                <a className={this.state.showPort && style.clickedNav}href="">Portfolio</a>
                 <img className={style.arrow} src={this.state.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
                  { this.state.showPort &&
                   <div className={style.subList}>
