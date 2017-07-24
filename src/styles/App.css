@@ -15,7 +15,7 @@ a {
 }
 
 .header {
-  height: 76px;
+  z-index: 1000;
   position: fixed;
   left: 0;
   top: 0;
@@ -26,7 +26,8 @@ a {
 }
 
 .hdWrap {
-  width: 95%;
+  width: 1200px;
+  max-width: 90%;
   margin: auto;
   overflow: hidden;
   padding: 20px 0;
@@ -39,7 +40,7 @@ a {
 
 .logo a img {
   font-size: 1em;
-  max-height: 33px;
+  max-height: 40px;
   vertical-align: middle;
 }
 
@@ -61,19 +62,29 @@ a {
 
 .nav > ul > li {
   float: left;
-  margin: 0 10px;
-  font-size: 15px;
+  margin: 0 20px;
+  font-size: 16px;
   font-family: 'Futura-Med';
 }
+
+.nav > ul > li .clickedNav {
+  color: rgb(255, 159, 119);
+  border-bottom: 1px solid rgb(255, 159, 119);
+}
+
 .nav ul li .arrow {
-  width: 7px;
-  margin-left: 3px;
+  margin-left: 7px;
+  vertical-align: middle;
 }
 
 .nav > ul > li > a {
-  padding: 8px 0 5px;
+  padding: 9px 0 5px;
   display: inline-block;
   color: #000;
+}
+
+.nav ul .inqu {
+  margin-top: 2px;
 }
 
 .nav ul .inqu a {
@@ -82,12 +93,12 @@ a {
   font-family: 'YoonGothicPro', sans-serif;
   background: #000;
   color: #ffbea2;
-  padding: 0 13px 0 10px;
+  padding: 0 35px 0 22px;
 } 
 
 .nav ul .inqu img {
-  width: 10px;
-  margin-right: 13px;
+  max-width: 12px;
+  margin-right: 25px;
   margin-top: -3px;
   vertical-align: middle;
 }
@@ -140,4 +151,62 @@ a {
 
 .subList .port li a img {
   width: 18px;
+}
+
+@media screen and (max-width: 860px) {
+  .nav > ul > li {
+    margin: 0 8px;
+  }
+  .nav ul .inqu {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav ul .inqu a {
+    padding: 0 10px 0 7px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logo a img {
+    max-height: 33px;
+  }
+  .nav > ul > li {
+    margin: 0 10px;
+    font-size: 15px;
+  }
+  .nav > ul > li > a {
+    padding: 8px 0 5px;
+  }
+  .nav ul li .arrow {
+    width: 7px;
+    margin-left: 3px;
+  }
+  .nav ul .inqu {
+    margin-top: 0;
+  }
+  .nav ul .inqu a {
+    padding: 0 13px 0 10px;
+  }
+  .nav ul .inqu a img {
+    width: 10px;
+    margin-right: 13px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .nav > ul > li {
+     margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .hdWrap {
+    width: 100%;
+    max-width: 95%;
+  }
+  .logo a img {
+    max-height: 35px;
+  }
 }

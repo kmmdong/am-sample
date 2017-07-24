@@ -7,7 +7,7 @@ export default class Header extends React.Component {
 
     this.state = {
       showAbout : false,
-      showPort : false
+      showPort : false,
     }
   }
 
@@ -48,9 +48,9 @@ export default class Header extends React.Component {
           </h1>
           <nav className={style.nav}>
             <ul className={style.navList}>
-              <li>
-                <a onClick={this.selectedAbout.bind(this)} href="">About</a>
-                <img className={style.arrow} src="src/img/arrow_up.png" alt=""/>
+              <li onClick={this.selectedAbout.bind(this)}>
+                <a className={this.state.showAbout ? style.clickedNav : ''} href="">About</a>
+                <img className={style.arrow} src={this.state.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
                 { this.state.showAbout &&
                   <div className={style.subList}>
                   <ul>
@@ -62,9 +62,9 @@ export default class Header extends React.Component {
                 </div>
                 }
               </li>
-              <li>
-                <a onClick={this.selectedPort.bind(this)} href="">Portfolio</a>
-                <img className={style.arrow} src="src/img/arrow_up.png" alt=""/>
+              <li onClick={this.selectedPort.bind(this)}>
+                <a className={this.state.showPort ? style.clickedNav : ''}href="">Portfolio</a>
+                <img className={style.arrow} src={this.state.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
                  { this.state.showPort &&
                   <div className={style.subList}>
                     <ul className={style.port}>
