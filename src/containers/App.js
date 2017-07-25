@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({
   deskTopHeader: state.deskTopHeader,
   mobileHeader: state.mobileHeader
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   selectAboutDesktop: () => {dispatch(actions.selectAboutDesktop())},
@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   selectHamMobile: () => {dispatch(actions.selectHamMobile())},
   selectAboutMobile: () => {dispatch(actions.selectAboutMobile())},
   selectPortMobile: () => {dispatch(actions.selectPortMobile())},
-})
+});
 
 const AppContainer = connect(
   mapStateToProps,

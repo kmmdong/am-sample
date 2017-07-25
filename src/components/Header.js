@@ -4,7 +4,11 @@ import style from '../styles/App.css'
 export default class Header extends React.Component {
   constructor (props) {
     super (props)
-  }
+
+    this.state = {
+      hover: false
+    }
+  };
 
   selectedAbout(e) {
     e.preventDefault()
@@ -22,6 +26,18 @@ export default class Header extends React.Component {
     } else {
       this.props.selectPortDesktop()
     }
+  };
+
+  mouseOn() {
+    this.setState({
+      hover: true
+    })
+  };
+
+  mouseLeave() {
+    this.setState({
+      hover: false
+    })
   };
 
   render() {
@@ -64,9 +80,9 @@ export default class Header extends React.Component {
               <li>
                 <a href="">a:m Picks</a>
               </li>
-               <li className={style.inqu}>
+               <li className={style.inqu} onMouseEnter={this.mouseOn.bind(this)} onMouseLeave={this.mouseLeave.bind(this)}>
                  <a href="">
-                   <img src="src/img/inquire.png" alt=""/>
+                   <img src={this.state.hover ? "src/img/inquire_on.png" :"src/img/inquire.png"} alt=""/>
                    리모델링 신청
                  </a>
                </li>  

@@ -11,7 +11,7 @@ const initialState = {
     showAbout: false,
     showPort: false
   }
-}
+};
 
 const deskTopHeader = (state = initialState.deskTopHeader, action) => {
   switch (action.type) {
@@ -26,7 +26,7 @@ const deskTopHeader = (state = initialState.deskTopHeader, action) => {
     default: 
       return Object.assign({}, state)  
   }
-}
+};
 
 const mobileHeader = (state = initialState.mobileHeader, action) => {
   switch (action.type) {
@@ -46,7 +46,7 @@ const mobileHeader = (state = initialState.mobileHeader, action) => {
     default: 
       return Object.assign({}, state)  
   }
-}
+};
 
 export default combineReducers({
   deskTopHeader,

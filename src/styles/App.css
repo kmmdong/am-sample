@@ -11,6 +11,7 @@ h1 {
 }
 
 a {
+  color: #000;
   text-decoration: none;
 }
 
@@ -97,6 +98,15 @@ img {
   font-family: 'YoonGothicPro', sans-serif;
   background: #000;
   color: #ffbea2;
+  padding: 0 35px 0 22px;
+}
+
+.nav ul .inqu a:hover {
+  font-size: 12px;
+  line-height: 36px;
+  font-family: 'YoonGothicPro', sans-serif;
+  background:#ffbea2;
+  color: #000;
   padding: 0 35px 0 22px;
 } 
 
@@ -410,9 +420,4 @@ img {
 
 .mHeader .mSubMenu .sns a:last-child {
   border-right: none;
-}
-
-.mHeader .mSubMenu  {
-  color: rgb(255, 159, 119);
-  border-bottom: 1px solid rgb(255, 159, 119);
 }
