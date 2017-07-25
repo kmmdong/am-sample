@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
-import style from '../styles/App.css'
+import style from '../styles/App.css';
 
 export default class MobileHeader extends React.Component {
   constructor (props) {
     super (props)
-
-    this.state = {
-      showAbout : false,
-      showPort : false,
-      showSub : false
-    }
   }
 
   openSub(e) {
     e.preventDefault()
     this.props.selectHamMobile()
-  }
+  };
 
   selectedAbout(e) {
     e.preventDefault()
     this.props.selectAboutMobile()  
-  }
+  };
 
   selectedPort(e) {
     e.preventDefault()
     this.props.selectPortMobile()
-  }
+  };
 
-  render () {
+  render() {
     return (
       <header className={style.mHeader}>
         <div className={style.mHdWrap}>
