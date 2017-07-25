@@ -20,6 +20,7 @@ describe('<Header /> test', function() {
         selectPortDesktop={mockData.selectPortDesktop}
       />
     );
+  
   const event = {
     preventDefault: jest.fn()
   };
@@ -87,7 +88,7 @@ describe('<Header /> test', function() {
       });
 
       afterAll(function() {
-        wrapper.instance().props.selectPortDesktop.mockReset();
+        wrapper.instance().props.selectAboutDesktop.mockReset();
         event.preventDefault.mockReset();
       });
     });
@@ -101,7 +102,6 @@ describe('<Header /> test', function() {
       it('should call selectAboutDesktop', function() {
         expect(event.preventDefault).toHaveBeenCalled();
         expect(wrapper.instance().props.selectAboutDesktop).toHaveBeenCalled();
-        expect(wrapper.instance().props.selectPortDesktop).not.toHaveBeenCalled();
       });
       
       afterAll(function() {

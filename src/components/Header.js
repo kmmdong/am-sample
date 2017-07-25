@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import style from '../styles/App.css'
+import Transition from 'react-motion-ui-pack';
+import style from '../styles/App.css';
 
 export default class Header extends React.Component {
   constructor (props) {
@@ -54,28 +55,42 @@ export default class Header extends React.Component {
               <li onClick={this.selectedAbout.bind(this)}>
                 <a className={this.props.deskTopHeader.showAbout && style.clickedNav} href="">About</a>
                 <img className={style.arrow} src={this.props.deskTopHeader.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
-                { this.props.deskTopHeader.showAbout &&
-                  <div className={style.subList}>
-                  <ul>
-                    <li><a><img src="src/img/weare.png" alt=""/><br/>we are</a></li>
-                    <li><a><img src="src/img/service.png" alt=""/><br/>service</a></li>
-                    <li><a><img src="src/img/contact.png" alt="" title=""/><br/>contact</a></li>
-                    <li><a><img src="src/img/recruit.png" alt=""/><br/>recruit</a></li>
-                  </ul>
-                </div>
-                }
+                  <Transition
+                    component={false}
+                    runOnMount={false}
+                    enter={{opacity: 1, translateY: 0}}
+                    leave={{opacity: 0, translateY: 5}}
+                  >
+                    { this.props.deskTopHeader.showAbout &&
+                      <div className={style.subList} key={'subAbout'}>
+                      <ul>
+                        <li><a><img src="src/img/weare.png" alt=""/><br/>we are</a></li>
+                        <li><a><img src="src/img/service.png" alt=""/><br/>service</a></li>
+                        <li><a><img src="src/img/contact.png" alt="" title=""/><br/>contact</a></li>
+                        <li><a><img src="src/img/recruit.png" alt=""/><br/>recruit</a></li>
+                      </ul>
+                    </div>
+                    }
+                  </Transition>
               </li>
               <li onClick={this.selectedPort.bind(this)}>
                 <a className={this.props.deskTopHeader.showPort && style.clickedNav}href="">Portfolio</a>
                 <img className={style.arrow} src={this.props.deskTopHeader.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
-                 { this.props.deskTopHeader.showPort &&
-                  <div className={style.subList}>
-                    <ul className={style.port}>
-                      <li><a><img src="src/img/all.png" alt=""/><br/>평형대별</a></li>
-                      <li><a><img src="src/img/section.png" alt=""/><br/>공간대별</a></li>
-                    </ul>
-                  </div>
-                  }
+                  <Transition
+                    component={false}
+                    runOnMount={true}
+                    enter={{opacity: 1, translateY: 0}}
+                    leave={{opacity: 0, translateY: 5}}
+                  >
+                      { this.props.deskTopHeader.showPort &&
+                        <div className={style.subList} key={'subPort'}>
+                          <ul className={style.port}>
+                            <li><a><img src="src/img/all.png" alt=""/><br/>평형대별</a></li>
+                            <li><a><img src="src/img/section.png" alt=""/><br/>공간대별</a></li>
+                          </ul>
+                        </div>
+                      }
+                  </Transition>
               </li>
               <li>
                 <a href="">a:m Picks</a>

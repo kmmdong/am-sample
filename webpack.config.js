@@ -1,13 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
+const UglifyJSPlugin = new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false,
+      }
+});
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
   inject: 'body'
 });
 
-module.exports = {
+
+const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve('dist'),
@@ -41,5 +48,15 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify("production") 
+      }
+    }),
+    UglifyJSPlugin
+  ]
 };
+
+module.exports = config;
