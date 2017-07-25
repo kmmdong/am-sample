@@ -4,41 +4,27 @@ import style from '../styles/App.css'
 export default class Header extends React.Component {
   constructor (props) {
     super (props)
-
-    this.state = {
-      showAbout : false,
-      showPort : false
-    }
   }
 
-  selectedAbout (e) {
-    this.props.selectSub()
+  selectedAbout(e) {
     e.preventDefault()
-    if (this.state.showPort) {
-      this.setState({
-        showPort : false
-      })
+    if (this.props.deskTopHeader.showPort) {
+      this.props.selectPortDesktop()
     } else {
-      this.setState({
-        showAbout : !this.state.showAbout
-      })
+      this.props.selectAboutDesktop()
     }
-  }
+  };
 
-  selectedPort (e) {
+  selectedPort(e) {
     e.preventDefault()
-    if (this.state.showAbout) {
-      this.setState({
-        showAbout : false
-      })
+    if (this.props.deskTopHeader.showAbout) {
+      this.props.selectAboutDesktop()
     } else {
-      this.setState({
-        showPort : !this.state.showPort
-      })
+      this.props.selectPortDesktop()
     }
-  }
+  };
 
-  render () {
+  render() {
     return (
       <header className={style.header}>
         <div className={style.hdWrap}>
@@ -50,9 +36,9 @@ export default class Header extends React.Component {
           <nav className={style.nav}>
             <ul className={style.navList}>
               <li onClick={this.selectedAbout.bind(this)}>
-                <a className={this.state.showAbout && style.clickedNav} href="">About</a>
-                <img className={style.arrow} src={this.state.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
-                { this.state.showAbout &&
+                <a className={this.props.deskTopHeader.showAbout && style.clickedNav} href="">About</a>
+                <img className={style.arrow} src={this.props.deskTopHeader.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
+                { this.props.deskTopHeader.showAbout &&
                   <div className={style.subList}>
                   <ul>
                     <li><a><img src="src/img/weare.png" alt=""/><br/>we are</a></li>
@@ -64,9 +50,9 @@ export default class Header extends React.Component {
                 }
               </li>
               <li onClick={this.selectedPort.bind(this)}>
-                <a className={this.state.showPort && style.clickedNav}href="">Portfolio</a>
-                <img className={style.arrow} src={this.state.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
-                 { this.state.showPort &&
+                <a className={this.props.deskTopHeader.showPort && style.clickedNav}href="">Portfolio</a>
+                <img className={style.arrow} src={this.props.deskTopHeader.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
+                 { this.props.deskTopHeader.showPort &&
                   <div className={style.subList}>
                     <ul className={style.port}>
                       <li><a><img src="src/img/all.png" alt=""/><br/>평형대별</a></li>

@@ -14,23 +14,17 @@ export default class MobileHeader extends React.Component {
 
   openSub(e) {
     e.preventDefault()
-      this.setState({
-        showSub : !this.state.showSub
-      })
+    this.props.selectHamMobile()
   }
 
   selectedAbout(e) {
     e.preventDefault()
-      this.setState({
-        showAbout : !this.state.showAbout
-      })
+    this.props.selectAboutMobile()  
   }
 
   selectedPort(e) {
     e.preventDefault()
-      this.setState({
-        showPort : !this.state.showPort
-      })
+    this.props.selectPortMobile()
   }
 
   render () {
@@ -46,31 +40,31 @@ export default class MobileHeader extends React.Component {
             <img src="src/img/btn_nav.png" alt=""/>
           </a>
         </div>
-        {this.state.showSub &&
+        {this.props.mobileHeader.showHam &&
         <div className={style.mSubMenu}>
           <a href="" className={style.mInquBtn}>
             <img src="src/img/inquire.png" alt=""/>
              리모델링 신청
           </a>
           <h3>
-            <a className={this.state.showAbout && style.clicked} onClick={this.selectedAbout.bind(this)} href="#">
+            <a className={this.props.mobileHeader.showAbout && style.clicked} onClick={this.selectedAbout.bind(this)} href="#">
               About
-              <img src={this.state.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
+              <img src={this.props.mobileHeader.showAbout ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
             </a> 
           </h3>
-          {this.state.showAbout && <ul className= {style.mSubList}>
+          {this.props.mobileHeader.showAbout && <ul className= {style.mSubList}>
             <li><a href=""><img src="src/img/weare.png" alt=""/><br/>we are</a></li>
             <li><a className={style.br} href=""><img src="src/img/service.png" alt="" title=""/><br/>service</a></li>
             <li><a className={style.bt} href=""><img src="src/img/contact.png" alt=""/><br/>contact</a></li>
             <li><a className={style.brBt} href=""><img src="src/img/recruit.png" alt=""/><br/>recruit</a></li>
           </ul>}
           <h3>
-            <a className={this.state.showPort && style.clicked} onClick={this.selectedPort.bind(this)} href="#">
+            <a className={this.props.mobileHeader.showPort && style.clicked} onClick={this.selectedPort.bind(this)} href="#">
               Portfolio
-              <img src={this.state.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
+              <img src={this.props.mobileHeader.showPort ? "src/img/arrow.png" : "src/img/arrow_up.png"} alt=""/>
             </a> 
           </h3>
-          {this.state.showPort && <ul className= {style.mSubList}>
+          {this.props.mobileHeader.showPort && <ul className= {style.mSubList}>
             <li className={style.port}><a className={style.bt} href=""><img src="src/img/all.png" alt=""/><br/>평형대별</a></li>
             <li className={style.port}><a className={style.brBt} href=""><img src="src/img/section.png" alt=""/><br/>공간별</a></li>
           </ul>}

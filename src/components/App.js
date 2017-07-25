@@ -11,8 +11,17 @@ export default class App extends React.Component {
   render() {
     return (
      <div className={style.container}>
-        <Header selectSub={this.props.selectSub}/>
-        <MobileHeader />
+        <Header 
+          deskTopHeader={this.props.deskTopHeader}
+          selectAboutDesktop={this.props.selectAboutDesktop}
+          selectPortDesktop={this.props.selectPortDesktop}
+        />
+        <MobileHeader
+          mobileHeader={this.props.mobileHeader} 
+          selectHamMobile={this.props.selectHamMobile}
+          selectAboutMobile={this.props.selectAboutMobile}
+          selectPortMobile={this.props.selectPortMobile}
+        />
      </div>);
   }
 };
