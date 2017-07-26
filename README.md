@@ -15,7 +15,7 @@
 [Yarn](https://yarnpkg.com/en/docs/install)을 권장합니다.
 
 ---
-## Installation
+## Installation & Start
 
  ```
  git clone https://github.com/kmmdong/am-sample
@@ -23,7 +23,10 @@
  yarn install
  yarn start
  ```
-
+ ### wepack-dev-server 
+ ```
+ http://localhost:8080/ 에서 동작합니다.
+ ```
 ## Test
 
 ```
